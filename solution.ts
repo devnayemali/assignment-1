@@ -51,3 +51,11 @@ const filterByRating = (items: { title: string, rating: number }[]): { title: st
     return filterItem;
 
 }
+
+
+const filterActiveUsers = (users: { id: number, name: string, email: string, isActive: boolean }[]): { id: number, name: string, email: string, isActive: boolean }[] => {
+
+    const activeUser = users.filter(user => user.isActive === true);
+    return activeUser;
+
+}
