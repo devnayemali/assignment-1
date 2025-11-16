@@ -42,3 +42,12 @@ class Person {
     }
 
 }
+
+
+const filterByRating = (items: { title: string, rating: number }[]): { title: string, rating: number }[] => {
+
+    const filterItem = items.filter(item => item.rating >= 4);
+
+    return filterItem;
+
+}
