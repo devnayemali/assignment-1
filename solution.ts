@@ -80,3 +80,34 @@ const printBookDetails = (book: Book): void => {
     console.log(`Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availableText}`);
 
 }
+
+
+function getUniqueValues(arr1: (string | number)[], arr2: (string | number)[]): (string | number)[] {
+
+    const uniqueValues: (string | number)[] = [];
+
+    function checkHave(array: (string | number)[], value: string | number): boolean {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === value) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    for (let i = 0; i < arr1.length; i++) {
+        if (!checkHave(uniqueValues, arr1[i])) {
+            uniqueValues[uniqueValues.length] = arr1[i];
+        }
+    }
+
+
+    for (let i = 0; i < arr2.length; i++) {
+        if (!checkHave(uniqueValues, arr2[i])) {
+            uniqueValues[uniqueValues.length] = arr2[i];
+        }
+    }
+
+    return uniqueValues;
+}
+
