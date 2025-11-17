@@ -111,3 +111,33 @@ function getUniqueValues(arr1: (string | number)[], arr2: (string | number)[]): 
     return uniqueValues;
 }
 
+
+const calculateTotalPrice = (products: { name: string, price: number; quantity: number; discount?: number }[]) => {
+
+    if (products.length === 0) return 0;
+
+    const subTotalPriceArray = products.map(product => {
+
+        const baseTotal = product.price * product.quantity;
+
+        if (product.discount !== undefined) {
+            const discountAmount = (baseTotal * product.discount) / 100;
+            return baseTotal - discountAmount;
+        }
+
+        return baseTotal;
+
+    });
+
+    return subTotalPriceArray.reduce((total, itemTotal) => total + itemTotal, 0);
+
+}
+
+
+const products = [
+    { name: 'Pen', price: 10, quantity: 2 },
+    { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
+    { name: 'Bag', price: 50, quantity: 1, discount: 20 },
+];
+
+console.log(calculateTotalPrice(products));
