@@ -38,10 +38,12 @@ class Person {
     }
 
     getDetails(): string {
-        return `Name: ${this.name}, Age: ${this.age}`;
+        return `'Name: ${this.name}, Age: ${this.age}'`;
     }
 
 }
+const person1 = new Person('John Doe', 30);
+console.log(person1.getDetails());
 
 
 const filterByRating = (items: { title: string, rating: number }[]): { title: string, rating: number }[] => {
@@ -112,7 +114,7 @@ function getUniqueValues(arr1: (string | number)[], arr2: (string | number)[]): 
 }
 
 
-const calculateTotalPrice = (products: { name: string, price: number; quantity: number; discount?: number }[]) => {
+const calculateTotalPrice = (products: { name: string, price: number; quantity: number; discount?: number }[]): number => {
 
     if (products.length === 0) return 0;
 
@@ -121,8 +123,17 @@ const calculateTotalPrice = (products: { name: string, price: number; quantity: 
         const baseTotal = product.price * product.quantity;
 
         if (product.discount !== undefined) {
-            const discountAmount = (baseTotal * product.discount) / 100;
-            return baseTotal - discountAmount;
+
+            if (product.discount >= 0 && product.discount <= 100) {
+
+                const discountAmount = (baseTotal * product.discount) / 100;
+                return baseTotal - discountAmount;
+
+            } else {
+                console.warn(
+                    `Discount must be between 0 and 100.`
+                );
+            }
         }
 
         return baseTotal;
@@ -132,12 +143,3 @@ const calculateTotalPrice = (products: { name: string, price: number; quantity: 
     return subTotalPriceArray.reduce((total, itemTotal) => total + itemTotal, 0);
 
 }
-
-
-const products = [
-    { name: 'Pen', price: 10, quantity: 2 },
-    { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
-    { name: 'Bag', price: 50, quantity: 1, discount: 20 },
-];
-
-console.log(calculateTotalPrice(products));
