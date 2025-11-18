@@ -3,7 +3,7 @@
 
 TypeScript-এ আমরা ডাটা স্ট্রাকচার ডিফাইন করতে interface এবং type alias — দুইটাই ব্যবহার করতে পারি। কিন্তু এদের মধ্যে কিছু গুরুত্বপূর্ণ পার্থক্য রয়েছে।
 
-- পার্থক্য : interface সহজে অন্য interface কে extend করতে পারে। type extend করা যায়, তবে সাধারণত intersection (&) ব্যবহার করে।
+পার্থক্য : interface সহজে অন্য interface কে extend করতে পারে। type extend করা যায়, তবে সাধারণত intersection (&) ব্যবহার করে।
 
 ## উদাহরণ 
 
@@ -18,7 +18,7 @@ interface Admin extends User
 }
 ```
 
-- পার্থক্য : একই নামে একাধিক interface ডিফাইন করলে TypeScript এগুলো merge করে। কিন্তু type এ declaration merging সম্ভব নয়।
+পার্থক্য : একই নামে একাধিক interface ডিফাইন করলে TypeScript এগুলো merge করে। কিন্তু type এ declaration merging সম্ভব নয়।
 
 ## উদাহরণ 
 
@@ -32,7 +32,7 @@ interface Product {
 }
 ```
 
-- পার্থক্য : জটিল union, intersection বা conditional টাইপ তৈরি করতে type বেশি কার্যকর। সাধারণ object structure এর জন্য interface বেশি readable।
+পার্থক্য : জটিল union, intersection বা conditional টাইপ তৈরি করতে type বেশি কার্যকর। সাধারণ object structure এর জন্য interface বেশি readable।
 
 
 
