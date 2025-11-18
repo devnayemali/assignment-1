@@ -42,13 +42,17 @@ class Person {
     }
 
 }
-const person1 = new Person('John Doe', 30);
-console.log(person1.getDetails());
 
 
 const filterByRating = (items: { title: string, rating: number }[]): { title: string, rating: number }[] => {
 
-    const filterItem = items.filter(item => item.rating >= 4);
+    const filterItem = items.filter(item => {
+        if (item.rating > 5) {
+            console.warn(`Rating must be between 0 and 5.`);
+        } else {
+            return item.rating >= 4
+        }
+    });
 
     return filterItem;
 
@@ -102,7 +106,6 @@ function getUniqueValues(arr1: (string | number)[], arr2: (string | number)[]): 
             uniqueValues[uniqueValues.length] = arr1[i];
         }
     }
-
 
     for (let i = 0; i < arr2.length; i++) {
         if (!checkHave(uniqueValues, arr2[i])) {
