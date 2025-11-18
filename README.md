@@ -36,7 +36,7 @@ interface Product {
 
 
 
-# 2. any, unknown এবং never টাইপের পার্থক্য
+# 3. any, unknown এবং never টাইপের পার্থক্য
 TypeScript-এর তিনটি বিশেষ টাইপ আছে যেমন — any, unknown, এবং never।
 
 পার্থক্য : any টাইপ সবচেয়ে ফ্লেক্সিবল কিন্তু unsafe টাইপ । TypeScript এর টাইপ-চেকিং প্রায় পুরো বন্ধ করে দেয়।
