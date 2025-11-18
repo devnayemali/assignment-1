@@ -1,5 +1,5 @@
 
-# TypeScript-এ Interfaces এবং Types এর পার্থক্য
+# 1. TypeScript-এ Interfaces এবং Types এর পার্থক্য
 
 TypeScript-এ আমরা ডাটা স্ট্রাকচার ডিফাইন করতে interface এবং type alias — দুইটাই ব্যবহার করতে পারি। কিন্তু এদের মধ্যে কিছু গুরুত্বপূর্ণ পার্থক্য রয়েছে।
 
@@ -36,7 +36,7 @@ interface Product {
 
 
 
-# ২. any, unknown এবং never টাইপের পার্থক্য
+# 2. any, unknown এবং never টাইপের পার্থক্য
 TypeScript-এর তিনটি বিশেষ টাইপ আছে যেমন — any, unknown, এবং never।
 
 পার্থক্য : any টাইপ সবচেয়ে ফ্লেক্সিবল কিন্তু unsafe টাইপ । TypeScript এর টাইপ-চেকিং প্রায় পুরো বন্ধ করে দেয়।
